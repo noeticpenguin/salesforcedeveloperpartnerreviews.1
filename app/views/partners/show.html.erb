@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @partner.website %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @partner.name %>
+</p>
+
+<p>
+  <strong>Sells app exchange apps:</strong>
+  <%= @partner.sells_app_exchange_apps %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @partner.description %>
+</p>
+
+<%= link_to 'Edit', edit_partner_path(@partner) %> |
+<%= link_to 'Back', partners_path %>
