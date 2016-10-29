@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Partner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Partner %></h1>
+</div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @partner.website %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:website) %></dt>
+      <dd><pre class="prettyprint"><%= @partner.website %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @partner.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sells_app_exchange_apps) %></dt>
+      <dd><pre class="prettyprint"><%= @partner.sells_app_exchange_apps %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @partner.description %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @partner.name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              partners_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_partner_path(@partner), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              partner_path(@partner),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Sells app exchange apps:</strong>
-  <%= @partner.sells_app_exchange_apps %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @partner.description %>
-</p>
-
-<%= link_to 'Edit', edit_partner_path(@partner) %> |
-<%= link_to 'Back', partners_path %>
