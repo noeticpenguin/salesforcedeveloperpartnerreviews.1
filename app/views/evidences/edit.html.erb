@@ -1,6 +1,5 @@
-<h1>Editing evidence</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @evidence %> |
-<%= link_to 'Back', evidences_path %>
+<%- model_class = Evidence -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Evidence %></h1>
+</div>
+<%= render :partial => 'form' %>
