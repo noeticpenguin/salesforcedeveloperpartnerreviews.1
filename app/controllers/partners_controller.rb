@@ -1,5 +1,5 @@
 class PartnersController < ApplicationController
-  before_action :set_partner, only: [:show, :edit, :update, :destroy]
+  before_action :set_partner, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /partners
   # GET /partners.json
